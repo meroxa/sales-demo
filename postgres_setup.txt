@@ -1,0 +1,86 @@
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY,
+    product_type TEXT,
+    product_name TEXT,
+    stock INTEGER,
+    product_id INTEGER,
+    customer_address TEXT,
+    customer_email TEXT
+);
+
+
+
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES
+('Electronics', 'Smartphone', 100, 1, '123 Main St, CityA', 'customer1@email.com'),
+('Electronics', 'Laptop', 50, 2, '456 Elm St, CityB', 'customer2@email.com'),
+('Clothing', 'T-Shirt', 200, 3, '789 Maple St, CityC', 'customer3@email.com'),
+('Clothing', 'Jeans', 75, 4, '101 Pine St, CityD', 'customer4@email.com'),
+('Books', 'Mystery Novel', 150, 5, '202 Oak St, CityE', 'customer5@email.com'),
+('Books', 'Science Fiction', 120, 6, '303 Birch St, CityF', 'customer6@email.com'),
+('Home & Kitchen', 'Blender', 60, 7, '404 Cedar St, CityG', 'customer7@email.com'),
+('Home & Kitchen', 'Toaster', 80, 8, '505 Dogwood St, CityH', 'customer8@email.com'),
+('Sports', 'Basketball', 40, 9, '606 Fir St, CityI', 'customer9@email.com'),
+('Sports', 'Tennis Racket', 35, 10, '707 Grove St, CityJ', 'customer10@email.com'),
+('Toys', 'Action Figure', 90, 11, '808 Hickory St, CityK', 'customer11@email.com'),
+('Toys', 'Board Game', 110, 12, '909 Ivy St, CityL', 'customer12@email.com');
+
+
+
+
+SELECT * FROM customers;
+
+
+
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Electronics', 'Tablet', 120, 13, '1010 Juniper St, CityM', 'customer13@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Electronics', 'Headphones', 150, 14, '1111 Kite St, CityN', 'customer14@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Clothing', 'Jacket', 80, 15, '1212 Lark St, CityO', 'customer15@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Clothing', 'Sneakers', 95, 16, '1313 Mockingbird St, CityP', 'customer16@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Books', 'Romance Novel', 130, 17, '1414 Nightingale St, CityQ', 'customer17@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Books', 'Historical Fiction', 110, 18, '1515 Oriole St, CityR', 'customer18@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Home & Kitchen', 'Microwave', 70, 19, '1616 Peacock St, CityS', 'customer19@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Home & Kitchen', 'Coffee Maker', 85, 20, '1717 Quail St, CityT', 'customer20@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Sports', 'Soccer Ball', 100, 21, '1818 Raven St, CityU', 'customer21@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Sports', 'Baseball Glove', 65, 22, '1919 Sparrow St, CityV', 'customer22@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Toys', 'Doll', 90, 23, '2020 Thrush St, CityW', 'customer23@email.com');
+
+INSERT INTO customers (product_type, product_name, stock, product_id, customer_address, customer_email) VALUES ('Toys', 'Puzzle', 105, 24, '2121 Upland St, CityX', 'customer24@email.com');
+
+
+
+
+
+DELETE FROM customers WHERE product_id = 13;
+
+DELETE FROM customers WHERE product_id = 14;
+
+DELETE FROM customers WHERE product_id = 15;
+
+DELETE FROM customers WHERE product_id = 16;
+
+DELETE FROM customers WHERE product_id = 17;
+
+DELETE FROM customers WHERE product_id = 18;
+
+DELETE FROM customers WHERE product_id = 19;
+
+DELETE FROM customers WHERE product_id = 20;
+
+DELETE FROM customers WHERE product_id = 21;
+
+DELETE FROM customers WHERE product_id = 22;
+
+DELETE FROM customers WHERE product_id = 23;
+
+DELETE FROM customers WHERE product_id = 24;
