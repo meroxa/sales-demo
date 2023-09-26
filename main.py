@@ -16,12 +16,12 @@ from simple_examples.sentry_monitoring import init_sentry
 from advanced_examples.anomaly_detection import init_anomaly_detector, calculate_transaction_amount, generate_history_data
 from advanced_examples.sentiment_analysis import enrich_with_sentiment_score
 from advanced_examples.schema_validation import validate_payload
-from advanced_examples.redis_deduplication import create_redis_client, is_duplicate
+# from advanced_examples.redis_deduplication import create_redis_client, is_duplicate
 
 # Initialize Sentry for error monitoring
 init_sentry()
 # Create a Redis client for deduplication
-redis_client = create_redis_client()
+# redis_client = create_redis_client()
 
 # Generate historical data for anomaly detection
 history_data = generate_history_data(1000)
@@ -44,11 +44,11 @@ def transform(records: RecordList) -> RecordList:
                 print(f"Invalid schema for record: {record}")
                 continue
 
-            # Data deduplication
-            dedup_key = f"{payload['customer_id']}_{payload['order_id']}"
-            if is_duplicate(redis_client, dedup_key):
-                print(f"Duplicate record found: {record.key}")
-                continue
+            # # Data deduplication
+            # dedup_key = f"{payload['customer_id']}_{payload['order_id']}"
+            # if is_duplicate(redis_client, dedup_key):
+            #     print(f"Duplicate record found: {record.key}")
+            #     continue
 
             # Enrich with geolocation
             enrich_with_geolocation(payload)
@@ -94,9 +94,9 @@ class App:
             turbine.register_secrets("GOOGLE_MAPS_API_KEY")
             turbine.register_secrets("INFLUXDB_TOKEN")
             turbine.register_secrets("SENTRY_DSN")
-            turbine.register_secrets("REDIS_HOST")
-            turbine.register_secrets("REDIS_PORT")
-            turbine.register_secrets("REDIS_PASSWORD")
+            # turbine.register_secrets("REDIS_HOST")
+            # turbine.register_secrets("REDIS_PORT")
+            # turbine.register_secrets("REDIS_PASSWORD")
 
             transformed = await turbine.process(records, transform)
 
